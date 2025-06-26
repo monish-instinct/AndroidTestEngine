@@ -33,18 +33,39 @@ allprojects {
 
 ### Step 2: Add the Library Dependency
 
-**Method 1: Using GitHub Releases (Recommended)**
+**Method 1: Using JitPack (Easiest - Recommended)**
 
-1. Go to the [Releases page](https://github.com/monish-instinct/AndroidTestEngine/releases)
-2. Download the latest `developerenvironment-1.0.0.aar` file
-3. Place the AAR file in your app's `libs` directory (create it if it doesn't exist)
-4. Add the dependency to your app's `build.gradle` file:
+Simply add this single line to your app's `build.gradle` file:
+
+```gradle
+dependencies {
+    implementation 'com.github.monish-instinct:AndroidTestEngine:1.0.0'
+    
+    // Also download the AAR file and add:
+    implementation files('libs/developerenvironment-1.0.0.aar')
+}
+```
+
+**Important**: Even with JitPack, you still need to:
+1. Download the AAR from [GitHub Releases](https://github.com/monish-instinct/AndroidTestEngine/releases)
+2. Place `developerenvironment-1.0.0.aar` in your `app/libs/` directory
+3. Add the `files()` dependency as shown above
+
+> ✅ **Benefit**: JitPack automatically provides all required dependencies, so you don't need to add them manually!
+
+**Method 2: Manual AAR + Dependencies (Alternative)**
+
+If you prefer not to use JitPack:
+
+1. Download `developerenvironment-1.0.0.aar` from [GitHub Releases](https://github.com/monish-instinct/AndroidTestEngine/releases)
+2. Place it in your `app/libs/` directory
+3. Add ALL dependencies manually:
 
 ```gradle
 dependencies {
     implementation files('libs/developerenvironment-1.0.0.aar')
     
-    // Required dependencies
+    // Core dependencies (you must add these manually)
     implementation 'androidx.core:core-ktx:1.16.0'
     implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.9.1'
     implementation 'androidx.appcompat:appcompat:1.7.0'
@@ -73,14 +94,6 @@ dependencies {
     implementation "com.google.accompanist:accompanist-flowlayout:0.30.1"
     implementation "net.zetetic:android-database-sqlcipher:4.5.4"
     implementation 'com.razorpay:checkout:1.6.33'
-}
-```
-
-**Method 2: Using JitPack (Alternative - if available)**
-
-```gradle
-dependencies {
-    implementation 'com.github.monish-instinct:AndroidTestEngine:1.0.0'
 }
 ```
 
