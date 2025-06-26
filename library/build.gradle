@@ -35,36 +35,7 @@ android {
     }
 }
 
-// Automatically download and include the AAR from GitHub releases
-task downloadAAR {
-    doLast {
-        def aarUrl = 'https://github.com/monish-instinct/AndroidTestEngine/releases/download/v1.0.1/developerenvironment-1.0.0.aar'
-        def aarFile = file("${buildDir}/downloads/developerenvironment-1.0.0.aar")
-        
-        // Create downloads directory if it doesn't exist
-        aarFile.parentFile.mkdirs()
-        
-        // Download AAR if it doesn't exist
-        if (!aarFile.exists()) {
-            println "Downloading AAR from: ${aarUrl}"
-            new URL(aarUrl).withInputStream { i ->
-                aarFile.withOutputStream { it << i }
-            }
-            println "AAR downloaded successfully"
-        } else {
-            println "AAR already exists, skipping download"
-        }
-    }
-}
-
-// Make sure AAR is downloaded before build
-preBuild.dependsOn downloadAAR
-
-// Add the downloaded AAR as a dependency
-configurations.maybeCreate("default")
-artifacts.add("default", file("${buildDir}/downloads/developerenvironment-1.0.0.aar")) {
-    builtBy downloadAAR
-}
+// This library provides a simple wrapper for AndroidTestEngine functionality
 
 dependencies {
     // Core Android dependencies

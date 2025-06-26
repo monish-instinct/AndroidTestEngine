@@ -6,4 +6,4 @@ before_install:
   - sdkmanager "platforms;android-34" "build-tools;34.0.0" "sources;android-34"
 
 install:
-  - ./gradlew publishToMavenLocal
+  - ./gradlew :library:publishToMavenLocal

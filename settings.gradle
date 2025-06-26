@@ -1,2 +1,2 @@
-include ':developerenvironment'
-project(':developerenvironment').projectDir = new File('library')
+include ':library'
+rootProject.name = 'AndroidTestEngine'
