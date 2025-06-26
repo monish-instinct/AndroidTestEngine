@@ -1,6 +1,6 @@
 # JitPack Configuration for AndroidTestEngine
 jdk:
-  - openjdk11
+  - openjdk17
 
 install:
   - ./gradlew :library:publishToMavenLocal
