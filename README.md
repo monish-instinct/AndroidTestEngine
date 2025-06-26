@@ -99,9 +99,12 @@ dependencies {
 
 ### Minimum Requirements
 - **Min SDK**: 26 (Android 8.0)
-- **Target SDK**: 35
-- **Compile SDK**: 36
-- **Java Version**: 11+
+- **Target SDK**: 35 (Android 15)
+- **Compile SDK**: 34-35 (Android 14-15)
+- **Java Version**: 11+ (Recommended: 17+)
+- **Gradle**: 8.0+ (Recommended: 8.4+)
+- **AGP**: 8.0+ (Recommended: 8.3.2+)
+- **Kotlin**: 1.9.0+ (Recommended: 2.0.0+)
 
 ### Required Dependencies
 The library automatically includes these dependencies:
