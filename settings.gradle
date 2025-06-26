@@ -1,0 +1,2 @@
+include ':developerenvironment'
+project(':developerenvironment').projectDir = new File('library')
