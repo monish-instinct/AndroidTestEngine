@@ -24,15 +24,15 @@ package skynetbee.developers.developerenvironment
  * - Kotlin: 1.9.0+
  */
 object LibraryInfo {
-    const val VERSION = "1.0.0"
+    const val VERSION = "1.0.1"
     const val NAME = "AndroidTestEngine - Developer Framework Library"
     const val DOWNLOAD_URL = "https://github.com/monish-instinct/AndroidTestEngine/releases/download/v1.0.1/developerenvironment-1.0.0.aar"
     
     // Version compatibility constants
     const val MIN_SDK = 26
-    const val TARGET_SDK = 35
+    const val TARGET_SDK = 34
     const val COMPILE_SDK_MIN = 34
-    const val COMPILE_SDK_MAX = 35
+    const val COMPILE_SDK_MAX = 34
     
     /**
      * Check if the project configuration is compatible with this library
