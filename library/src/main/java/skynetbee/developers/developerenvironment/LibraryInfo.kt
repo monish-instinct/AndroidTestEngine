@@ -26,7 +26,7 @@ package skynetbee.developers.developerenvironment
 object LibraryInfo {
     const val VERSION = "1.0.0"
     const val NAME = "AndroidTestEngine - Developer Framework Library"
-    const val DOWNLOAD_URL = "https://github.com/monish-instinct/AndroidTestEngine/releases/download/v1.0.0/developerenvironment-1.0.0.aar"
+    const val DOWNLOAD_URL = "https://github.com/monish-instinct/AndroidTestEngine/releases/download/v1.0.1/developerenvironment-1.0.0.aar"
     
     // Version compatibility constants
     const val MIN_SDK = 26

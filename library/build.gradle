@@ -37,7 +37,7 @@ android {
 // Automatically download and include the AAR from GitHub releases
 task downloadAAR {
     doLast {
-        def aarUrl = 'https://github.com/monish-instinct/AndroidTestEngine/releases/download/v1.0.0/developerenvironment-1.0.0.aar'
+        def aarUrl = 'https://github.com/monish-instinct/AndroidTestEngine/releases/download/v1.0.1/developerenvironment-1.0.0.aar'
         def aarFile = file("${buildDir}/downloads/developerenvironment-1.0.0.aar")
         
         // Create downloads directory if it doesn't exist
