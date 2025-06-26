@@ -1,5 +1,6 @@
 apply plugin: 'com.android.library'
 apply plugin: 'com.github.dcendents.android-maven'
+apply plugin: 'maven-publish'
 
 group = 'com.github.monish-instinct'
 
@@ -109,4 +110,16 @@ dependencies {
     debugImplementation 'androidx.compose.ui:ui-tooling:1.8.0'
     debugImplementation 'androidx.compose.ui:ui-test-manifest:1.8.0'
     androidTestImplementation "androidx.test.ext:junit:1.1.5"
+}
+
+// Publishing configuration for JitPack
+publishing {
+    publications {
+        maven(MavenPublication) {
+            from components.release
+            groupId = 'com.github.monish-instinct'
+            artifactId = 'AndroidTestEngine'
+            version = '1.0.1'
+        }
+    }
 }
