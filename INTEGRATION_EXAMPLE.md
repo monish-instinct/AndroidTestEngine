@@ -4,26 +4,34 @@ This guide shows you how to integrate the AndroidTestEngine library into your An
 
 ## Complete Integration Steps
 
-### 1. Download the AAR
+### 1. Add JitPack Repository
 
-1. Go to [GitHub Releases](https://github.com/monish-instinct/AndroidTestEngine/releases)
-2. Download `developerenvironment-1.0.0.aar`
-3. Create a `libs` folder in your app module if it doesn't exist
-4. Place the AAR file in `app/libs/`
+Add JitPack to your project's `settings.gradle` file:
 
-### 2. Project Structure
-```
-YourProject/
-├── app/
-│   ├── libs/
-│   │   └── developerenvironment-1.0.0.aar  ← Place AAR here
-│   ├── src/
-│   └── build.gradle  ← Add dependencies here
-├── build.gradle
-└── settings.gradle
+```gradle
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        mavenCentral()
+        maven { url 'https://jitpack.io' } // Add this line
+    }
+}
 ```
 
-### 3. Update app/build.gradle
+### 2. Add Single Dependency
+
+Add this **one line** to your app's `build.gradle`:
+
+```gradle
+dependencies {
+    implementation 'com.github.monish-instinct:AndroidTestEngine:1.0.0'
+}
+```
+
+**That's it!** No manual downloads, no libs folder needed!
+
+### 3. Full Example app/build.gradle
 
 ```gradle
 android {
@@ -53,43 +61,11 @@ android {
 }
 
 dependencies {
-    // AndroidTestEngine Library
-    implementation files('libs/developerenvironment-1.0.0.aar')
+    // AndroidTestEngine Library - ONE LINE DOES EVERYTHING! 🚀
+    implementation 'com.github.monish-instinct:AndroidTestEngine:1.0.0'
     
-    // Required Core Dependencies
-    implementation 'androidx.core:core-ktx:1.16.0'
-    implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.9.1'
-    implementation 'androidx.appcompat:appcompat:1.7.0'
-    implementation 'androidx.activity:activity-compose:1.10.1'
-    
-    // Compose BOM
-    implementation platform('androidx.compose:compose-bom:2025.06.00')
-    implementation 'androidx.compose.ui:ui'
-    implementation 'androidx.compose.ui:ui-tooling-preview'
-    implementation 'androidx.compose.material3:material3'
-    
-    // Additional Required Dependencies
-    implementation 'androidx.compose.ui:ui-tooling:1.8.0'
-    implementation 'androidx.constraintlayout:constraintlayout-compose:1.1.1'
-    implementation 'com.google.accompanist:accompanist-systemuicontroller:0.36.0'
-    implementation 'androidx.navigation:navigation-compose:2.7.4'
-    implementation 'androidx.lifecycle:lifecycle-viewmodel-compose:2.9.1'
-    implementation 'androidx.media3:media3-ui:1.3.0'
-    implementation 'androidx.media3:media3-exoplayer:1.3.0'
-    implementation 'androidx.compose.material:material-icons-extended:1.4.0'
-    implementation 'io.coil-kt:coil-compose:2.4.0'
-    implementation 'com.airbnb.android:lottie-compose:6.0.0'
-    implementation 'androidx.sqlite:sqlite-ktx:2.2.0'
-    implementation 'com.squareup.okhttp3:okhttp:4.11.0'
-    implementation 'com.itextpdf:itext7-core:9.2.0'
-    implementation 'org.apache.poi:poi-ooxml:5.2.3'
-    implementation 'org.apache.commons:commons-lang3:3.13.0'
-    implementation 'com.google.code.gson:gson:2.10.1'
-    implementation 'io.reactivex.rxjava3:rxjava:3.1.7'
-    implementation 'io.reactivex.rxjava3:rxandroid:3.0.2'
-    implementation "com.google.accompanist:accompanist-flowlayout:0.30.1"
-    implementation "net.zetetic:android-database-sqlcipher:4.5.4"
-    implementation 'com.razorpay:checkout:1.6.33'
+    // That's it! All dependencies are automatically included!
+    // No need to add 30+ dependencies manually
 }
 ```
 
@@ -227,9 +203,10 @@ fun MainScreen() {
 
 ### Common Issues:
 
-1. **Build errors**: Make sure all dependencies are added and versions match
+1. **Build errors**: Make sure JitPack repository is added to settings.gradle
 2. **Runtime crashes**: Ensure you've called `EngineStarter.initialize(this)` in your MainActivity
-3. **Missing components**: Verify the AAR file is in the correct location (`app/libs/`)
+3. **Download issues**: Check internet connection during first build (AAR downloads automatically)
+4. **JitPack timeout**: If build times out, try again - JitPack builds on first request
 
 ### Version Compatibility:
 - Android Studio: Arctic Fox or newer

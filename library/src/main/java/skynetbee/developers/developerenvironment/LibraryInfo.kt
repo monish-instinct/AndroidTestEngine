@@ -3,16 +3,17 @@ package skynetbee.developers.developerenvironment
 /**
  * AndroidTestEngine - Developer Framework Library
  * 
- * This is a JitPack wrapper for the AndroidTestEngine library.
- * The actual library is distributed as an AAR file via GitHub releases.
+ * This is a JitPack wrapper that automatically downloads and includes the AndroidTestEngine library.
  * 
  * To use this library:
- * 1. Add JitPack dependency: implementation 'com.github.monish-instinct:AndroidTestEngine:1.0.0'
- * 2. Download the AAR from: https://github.com/monish-instinct/AndroidTestEngine/releases
- * 3. Place the AAR in your app/libs/ directory
- * 4. Add: implementation files('libs/developerenvironment-1.0.0.aar')
+ * Simply add: implementation 'com.github.monish-instinct:AndroidTestEngine:1.0.0'
  * 
- * This wrapper automatically includes all required dependencies.
+ * This wrapper automatically:
+ * - Downloads the AAR from GitHub releases
+ * - Includes all required dependencies
+ * - Makes everything available to your project
+ * 
+ * No manual downloads or libs folder management needed!
  */
 object LibraryInfo {
     const val VERSION = "1.0.0"

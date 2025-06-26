@@ -33,25 +33,23 @@ allprojects {
 
 ### Step 2: Add the Library Dependency
 
-**Method 1: Using JitPack (Easiest - Recommended)**
+**🚀 Super Easy Method (Fully Automatic)**
 
-Simply add this single line to your app's `build.gradle` file:
+Simply add this **single line** to your app's `build.gradle` file:
 
 ```gradle
 dependencies {
     implementation 'com.github.monish-instinct:AndroidTestEngine:1.0.0'
-    
-    // Also download the AAR file and add:
-    implementation files('libs/developerenvironment-1.0.0.aar')
 }
 ```
 
-**Important**: Even with JitPack, you still need to:
-1. Download the AAR from [GitHub Releases](https://github.com/monish-instinct/AndroidTestEngine/releases)
-2. Place `developerenvironment-1.0.0.aar` in your `app/libs/` directory
-3. Add the `files()` dependency as shown above
+**That's it!** ✨ No manual downloads, no libs folder, no additional dependencies needed!
 
-> ✅ **Benefit**: JitPack automatically provides all required dependencies, so you don't need to add them manually!
+> ✅ **What happens automatically:**
+> - JitPack builds the library wrapper
+> - Downloads the AAR from GitHub releases
+> - Includes all required dependencies
+> - Makes everything available to your project
 
 **Method 2: Manual AAR + Dependencies (Alternative)**
 
